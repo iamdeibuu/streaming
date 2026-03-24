@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple YouTube Embed</title>
+    <title>Live Stream</title>
+    <style>
+        body {
+            margin: 0;
+            background: #e8dfcf; /* soft beige like your screenshot */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .player-container {
+            background: #000;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        iframe {
+            border-radius: 10px;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>My YouTube Video</h1>
-
-    <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/IvCg9ysoqBs"
-        frameborder="0"
-        allowfullscreen>
-    </iframe>
+    <div class="player-container">
+        <iframe width="800" height="450"
+            src="https://www.youtube.com/embed/hPaXdkjfqZ4"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+    </div>
 
 </body>
 </html>
