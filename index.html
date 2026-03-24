@@ -1,28 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Live Stream</title>
+    <title>Login</title>
     <style>
         body {
             margin: 0;
-            background: #e8dfcf;
+            font-family: Arial;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background: #f0f0f0;
         }
-        iframe {
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            background: #4a90e2;
+            color: white;
             border: none;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <iframe width="800" height="450"
-        src="https://www.youtube.com/embed/hPaXdkjfqZ4?controls=1&modestbranding=1&rel=0&showinfo=0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-    </iframe>
+<div class="card">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="error" style="color:red;"></p>
+</div>
+
+<script>
+    function login() {
+        const user = document.getElementById('username').value;
+        const pass = document.getElementById('password').value;
+
+        if (user === "admin" && pass === "1234") {
+            localStorage.setItem("loggedIn", "true");
+            window.location.href = "stream.html"; // go to stream page
+        } else {
+            document.getElementById('error').innerText = "Invalid login";
+        }
+    }
+</script>
 
 </body>
 </html>
